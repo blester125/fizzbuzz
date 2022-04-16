@@ -1,0 +1,37 @@
+#+title: FizzBuzz without rechecking
+#+author: Brian Lester
+
+* What is FizzBuzz
+Proported to be a classic interview question to filter out people who do not know how to code, although I have never known anyone who actually has been asked to do this.
+
+Given some number $n$, print all numbers between 1 and $n$ except if a number is divisible by $3$ it should be replaced by =Fizz=, if it is divisible by 5 it should be replaced as =Buzz=, and if it is divisible by both it should be replaced with =FizzBuzz=.
+* Two Classic Solutions
+Below are two of the common solutions. /Note:/ They are shown as a function that takes a single integer, and returns string to output as the outer loop to print all the numbers from $1 \rightarrow n$ is rather trivial and this function is there the true differences are.
+** Building it Up
+One solution is to build up a result of =Fizz= and =Buzz= and return that (or the integer).
+#+begin_src python
+def fizzbuzz(n: int) -> str:
+    result = ""
+    if n % 3 == 0:
+        result += "Fizz"
+    if n % 5 == 0:
+        result += "Buzz"
+    if not result:
+        result = str(n)
+    return result
+#+end_src
+** Checking all Cases
+A second solution is to explicitly check the "divisible by $3$ and $5$" check (represented here in the ~% 15~ check as 15 is the Least Common Multiple of 3 and 5).
+#+begin_src python
+def fizzbuzz(n: int) -> str:
+    if n % 15 == 0:
+        return "FizzBuzz"
+    if n % 3 == 0:
+        return "Fizz"
+    if n % 5 == 0:
+        return "Buzz"
+    return str(n)
+#+end_src
+* Double Checking
+
+* Single Checking
