@@ -28,7 +28,7 @@ class FizzBuzzTest(unittest.TestCase):
             else:
                 gold = str(number)
 
-            self.assertEqual(fizzbuzz._fizzbuzz(number), gold)
+            self.assertEqual(fizzbuzz.fizzbuzz(number), gold)
 
 
 if __name__ == "__main__":
